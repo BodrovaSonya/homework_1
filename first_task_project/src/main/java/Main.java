@@ -6,7 +6,8 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        while (true) {
+        boolean flag = true;
+        while (flag) {
             System.out.println("Input first number:");
             // first number
             float firstNumber = scanner.nextFloat();
@@ -40,7 +41,19 @@ public class Main {
                     System.out.printf("Sum: %.4f\n", sum(firstNumber, secondNumber));
                     break;
             }
-
+            System.out.println("Continue? (1/0)");
+            int answer = scanner.nextInt();
+            switch (answer){
+                case 0:
+                    flag = false;
+                    break;
+                case 1:
+                    flag = true;
+                    break;
+                default:
+                    flag = true;
+                    break;
+            }
         }
     }
 
